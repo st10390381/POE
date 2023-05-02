@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./POEPart1/UserLogin.java ./POEPart1/Message.java  "../test/POEPart1/UserLoginTest.java"  "../test/POEPart1/MessageTest.java"  
+        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./POEPart1/UserLogin.java ./POEPart1/PoePart1.java  "../test/POEPart1/UserLoginTest.java"   
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
@@ -42,12 +42,12 @@ jobs:
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/POEPart1
-        run: cp -t  "../../test/POEPart1" Message.class UserLogin.class
+        run: cp -t  "../../test/POEPart1" POEPart1.class UserLogin.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/POEPart1
-        run: cp -t  "../../testresources/" Message.class UserLogin.class 
+        run: cp -t  "../../testresources/" POEPart1.class UserLogin.class 
         
         # list contents or directory
       - name: List contents test package
@@ -59,6 +59,6 @@ jobs:
         working-directory: ./test
         run: |
          ls
-         java -jar  "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  POEPart1.MessageTest  
+         java -jar  "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  POEPart1.UserLoginTest  
          
          

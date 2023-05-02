@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./POEPart1/UserLogin.java ./POEPart1/PoePart1.java  "../test/POEPart1/UserLoginTest.java" "../test/POEPart1?UserLoginTest.java   
+        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./POEPart1/UserLogin.java ./POEPart1/PoePart1.java  "../test/POEPart1/UserLoginTest.java" "../test/POEPart1/UserLoginTest.java   
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
